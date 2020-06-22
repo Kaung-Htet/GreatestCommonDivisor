@@ -1,4 +1,23 @@
 public class GreatestCommonDivisor {
+    public static int getGreatestCommonDivisor (int first, int second){
+        if (first < 10 || second < 10){
+            return -1;
+        }
+
+        int divisor = 1;
+        int greatestCommonDivisor = 1;
+        while (divisor <= first ){
+        if ( (first % divisor == 0) && (second % divisor == 0)){
+            greatestCommonDivisor *= divisor;
+            first /= divisor;
+            second /= divisor;
+            divisor = 2;
+        } else {
+            divisor++;
+        }
+        }
+        return greatestCommonDivisor;
+    }
 }
 
 //Write a method named getGreatestCommonDivisor with two parameters of type int named first and second.
