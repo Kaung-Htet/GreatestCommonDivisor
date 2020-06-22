@@ -6,11 +6,17 @@ public class GreatestCommonDivisor {
 
         int divisor = 1;
         int greatestCommonDivisor = 1;
+
         while (divisor <= first ){
         if ( (first % divisor == 0) && (second % divisor == 0)){
             greatestCommonDivisor *= divisor;
+
+            //စားလို့ပြတ်ရင် နောက်ဆုံးစားလဒ်ကနေပဲပြန်စပြီး အပြတ်စားလို့ရတဲ့ကိန်းကို ပြန်ရှာ
             first /= divisor;
             second /= divisor;
+
+            //1 ကအကုန်လုံးကို စားလို့ပြတ်ပြီးသားမို့လို့ 1 ကပြန်စဖို့မလို
+            //ဆိုတော့ စားလို့ပြတ်တဲ့ဂဏန်းတွေ့ပြီဆိုရင် 2 ကနေပြန်စ
             divisor = 2;
         } else {
             divisor++;
